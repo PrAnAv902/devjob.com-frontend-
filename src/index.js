@@ -1,0 +1,33 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import {BrowserRouter} from 'react-router-dom';
+import { Provider } from "react-redux";
+import rootReducer from "./reducer";
+import { configureStore } from "@reduxjs/toolkit";
+import { Toaster } from "react-hot-toast";
+
+const store = configureStore({
+  reducer:rootReducer
+});
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <Provider store= {store}>
+    <BrowserRouter>
+      <App />
+      <Toaster 
+            reverseOrder={true}
+           toastOptions={{
+            className: 'font-sans tracking-wider rounded-none',
+            style: {
+            padding: '10px',
+            color: '#FFFFFF',
+            background:"#000000"
+            
+          },}}/>
+    </BrowserRouter>
+  </Provider>
+);
+
