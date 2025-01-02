@@ -86,7 +86,7 @@ const SavedJobs = () => {
                                       <div className='p-1 text-[#2f524c] bg-gray-50 text-[13px] px-2  w-fit max-[360px]:px-1'>POSTED {timeAgo(job.creationDetails).toUpperCase()}</div>
                                       <hr className="h-[1px] bg-gray-300 border-0 w-[100%] my-2"></hr> 
                                       <div className='flex  gap-3 justify-between'>
-                                        <div className='p-1 px-2 bg-[#000000] text-[#ffffff] items-center flex text-[19px] cursor-pointer gap-1' onClick={()=>{navigate(`/job/${job.id}`)}}>
+                                        <div className='p-1 px-2 bg-[#000000] text-[#ffffff] items-center flex text-[19px] cursor-pointer gap-1' onClick={()=>{navigate(`/job/${job.id}`)}} disabled={loading}>
                                          <GrOverview className='text-lg max-[360px]:px-1'/>View
                                         </div>
                                         <div className='p-1 px-2 bg-gray-50 text-[#000000] items-center flex text-[20px] cursor-pointer gap-1 max-[360px]:px-1' 
